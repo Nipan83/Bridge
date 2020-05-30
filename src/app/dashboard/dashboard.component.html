@@ -1,0 +1,23 @@
+<div class="content" id="content">
+  <div class="search">
+    <input type="text" class="search__input" aria-label="search" (keyup)="search()" [(ngModel)]="search_key" placeholder="enter your search">
+    <button class="search__btn" aria-label="submit search" (click)="search()"><i class="fas fa-search"></i></button>
+  </div>
+  <div *ngIf = "showMenuList" class="search-results">
+    <p (click) = "select_region($event.target.innerText)" class="menu-list" *ngFor="let region of filtered_regions">{{region}}</p>
+
+  </div>
+
+</div>
+
+
+<div *ngIf = "showDashboardContent" class="dashboard-content">
+  <p>Selected Region: {{selected_region}}</p>
+
+  <div class="info">
+    {{selected_region}} is a state in the Pacific Region of the United States. With 39.5 million residents across a total area of about 163,696 square miles (423,970 km2), {{selected_region}} is the most populous U.S. state and the third-largest by area, and is also the world's thirty-fourth most populous subnational entity, and is the most populated subnational entity in North America.
+  </div>
+  <button (click) = "navigateToInfo()" class="more_info">More Info</button>
+  
+</div>
+
