@@ -9,7 +9,6 @@ var usersRouter = require('./routes/users');
 const googleTrends = require('google-trends-api');
 
 
-
 var app = express();
 
 // view engine setup
@@ -24,6 +23,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(__dirname + '/dist/'));
 
 app.get('/', function(req,res) {
+
     
 res.sendFile(path.join(__dirname+'/dist/index.html'));
 });
@@ -31,7 +31,6 @@ res.sendFile(path.join(__dirname+'/dist/index.html'));
 
 app.use('/api', indexRouter);
 app.use('/users', usersRouter);
-
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
