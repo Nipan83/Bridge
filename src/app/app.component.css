@@ -1,48 +1,47 @@
 .w-100{
-	height: 100vh;
-	background-position: center center;
+    height: 100vh;
+    background-position: center center;
     background-repeat: no-repeat;
     background-attachment: local;
     background-size: cover;
 }
 
 .content{
-	top: 10%;
+    top: 10%;
 }
 
 .slides{
-	font-size: 3rem;
+    font-size: 3rem;
 }
 
 .acro{
-	color: green;
-	border: 3px solid green;
-	padding: 0px 10px;
-	font-weight: bold;
+    color: green;
+    border: 3px solid green;
+    padding: 0px 10px;
+    font-weight: bold;
 }
 
 
 .try-app{
-	text-align: center;
-	cursor: pointer;
-<<<<<<< HEAD
-	letter-spacing: 5px;
-	background-color: green;
+    text-align: center;
+    cursor: pointer;
+    letter-spacing: 5px;
+    background-color: green;
     border: 1px solid green;
     color: white;
     border-radius: 5px;
     padding: 5px 10px;
 }
 .try-app:hover{
-	text-align: center;
-	cursor: pointer;
-	letter-spacing: 5px;
-	background-color: white;
+    text-align: center;
+    cursor: pointer;
+    letter-spacing: 5px;
+    background-color: white;
     border: 1px solid green;
     color: green;
 }
 .overlay{
-	position: absolute;
+    position: absolute;
     top: 0;
     z-index: 9;
     width: 100%;
@@ -80,20 +79,18 @@
 
 
 .logo-img{
-	position: absolute;
-	z-index: 10;
-	color: white;
+    position: absolute;
+    z-index: 10;
+    color: white;
     font-size: 3rem;
     margin: 2rem 3rem;
     font-weight: bold;
-=======
->>>>>>> f60ec5101763668fa08fc324d6ea9ad62f5f9376
 }
 
 @media (max-width:400px)  {
-		.w-100{
-	height: 60vh;
-	}
+        .w-100{
+    height: 60vh;
+    }
 
 
-	}
+    }

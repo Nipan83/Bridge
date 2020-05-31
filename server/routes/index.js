@@ -27,27 +27,39 @@ router.get('/trends', function(req, res, next) {
 	});
 });
 
-router.get('/poverty/:region', function(req, res, next) {
+router.get('/poverty/', function(req, res, next) {
 	fs.createReadStream('PovertyEstimates.csv')
 	.pipe(csv())
 	.on('data', function(data){
 		try {
-			
-			if(data.Area_name.split(' ')[0].indexOf(req.params.region)>=0){
-			console.log(data.Area_name)
-			proverty_data.push(data);
-			res.send(data)
-		}
+			if(regions.includes(data.Area_name.split(' ')[0])){
+			let row = {'area':data.Area_name, 'total_poverty_count':data.POVALL_2018,'poverty_prec':data.PCTPOVALL_2018}
+			proverty_data.push(row)}
     }
     catch(err) {
     }
 })
 	.on('end',function(){
-    
+    res.send(proverty_data)
 });
 }) 
 
-	router.get('/education/:region', function(req, res, next) {
+	router.get('/education/', function(req, res, next) {
+		fs.createReadStream('Unemployment.csv')
+	.pipe(csv())
+	.on('data', function(data){
+		try {
+			if(regions.includes(data.area_name.split(' ')[0])){
+			console.log(data[' Employed_2019 '])
+			let row = {'area':data.area_name, 'employed':data[' Employed_2019 '],'unemployed':data[' Unemployed_2019 ']}
+			proverty_data.push(row)}
+    }
+    catch(err) {
+    }
+})
+	.on('end',function(){
+    res.send(proverty_data)
+});
 
 	});
 

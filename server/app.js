@@ -29,7 +29,7 @@ res.sendFile(path.join(__dirname+'/dist/index.html'));
 });
 
 
-app.use('/', indexRouter);
+app.use('/api', indexRouter);
 app.use('/users', usersRouter);
 
 

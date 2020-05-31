@@ -1,14 +1,7 @@
 <div class="logo">
-    <a href="/" class="simple-text">
-        <div class="logo-img">
-            <img src="/assets/img/logo3.png"/>
-        </div>
-<<<<<<< HEAD
-        <span style="color: white">.</span>
-=======
-        BRIDGE
->>>>>>> f60ec5101763668fa08fc324d6ea9ad62f5f9376
-    </a>
+    <div class="logo-img">
+      Bridge.
+    </div>
 </div>
 <div class="sidebar-wrapper">
   <div *ngIf="isMobileMenu()">
@@ -24,12 +17,12 @@
       </span>
     </form>
   </div>
-    <ul class="nav">
-        <li routerLinkActive="active" *ngFor="let menuItem of menuItems" class="{{menuItem.class}} nav-item">
-            <a class="nav-link" [routerLink]="[menuItem.path]">
-                <i class="material-icons">{{menuItem.icon}}</i>
-                <p>{{menuItem.title}}</p>
-            </a>
-        </li>
-    </ul>
+  <ul class="nav">
+    <li routerLinkActive="active" *ngFor="let menuItem of menuItems" class="{{menuItem.class}} nav-item">
+      <a class="nav-link" [routerLink]="[menuItem.path]">
+        <i class="material-icons">{{menuItem.icon}}</i>
+        <p>{{menuItem.title}}</p>
+      </a>
+    </li>
+  </ul>
 </div>

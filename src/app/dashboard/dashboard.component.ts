@@ -1,12 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import * as Chartist from 'chartist';
 import {Router} from '@angular/router';
+import {CookieService} from 'ngx-cookie-service';
 
 
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.scss']
+  styleUrls: ['./dashboard.component.scss'],
+  providers: [CookieService]
 })
 export class DashboardComponent implements OnInit {
   
@@ -15,12 +17,13 @@ export class DashboardComponent implements OnInit {
   search_key: string;
   showMenuList: boolean = false;
   showDashboardContent: boolean = false;
-  selected_region: string;
+  selected_region: string = "";
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private cookie: CookieService) { }
 
   select_region(value){
       this.selected_region = value;
+      this.cookie.set('region',value);
       this.showMenuList = false;
       this.showDashboardContent = true;
       let content = document.querySelector('#content');
@@ -29,6 +32,7 @@ export class DashboardComponent implements OnInit {
   }
   navigateTo(val){
       this.router.navigateByUrl(val);
+
   }
 
   search(){
@@ -46,7 +50,7 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit() {
       
-      this.regions = ["Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado", "Connecticut", "Delaware", "Florida", "Georgia", "Hawaii", "Idaho", "Illinois", "Indiana", "Iowa", "Kansas", "Kentucky", "Louisiana", "Maine", "Maryland", "", "Michigan", "Minnesota", "Mississippi", "Missouri", "Montana", "Nebraska", "Nevada", "New Hampshire", "New Jersey", "New Mexico", "New York", "North Carolina", "North Dakota", "Ohio", "Oklahoma", "Oregon", "Pennsylvania", "Rhode Island", "South Carolina", "South Dakota", "Tennessee", "Texas", "Utah", "Vermont", "Virginia", "Washington", "West Virginia", "Wisconsin", "Wyoming"]
+      this.regions = ["McKinley", "Luna", "Cibola", "Apache", "Maricopa", "Pima", "East Carroll", "Madison", "Tensas", "East Baton", "Adams", "Dunn", "Mckenzie", "Wells", "Williams", "Barnstable", "Dukes", "Essex", "Middlesex", "Hampshire", "Kent", "New Castle", "Sussex", "Seattle", "Yalima", "Okanogan", "Clark", "Chester", "Brandford", "Somerest"]
 
 
   }
