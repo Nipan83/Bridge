@@ -11,13 +11,24 @@
 </div>
 
 
-<div *ngIf = "showDashboardContent" class="dashboard-content">
-  <p>Selected Region: {{selected_region}}</p>
+<div *ngIf = "showDashboardContent">
+  <div class="section-1 dashboard-content">
+    <p>Selected Region: {{selected_region}}</p>
 
-  <div class="info">
-    {{selected_region}} is a state in the Pacific Region of the United States. With 39.5 million residents across a total area of about 163,696 square miles (423,970 km2), {{selected_region}} is the most populous U.S. state and the third-largest by area, and is also the world's thirty-fourth most populous subnational entity, and is the most populated subnational entity in North America.
+    <div class="info">
+      {{selected_region}} is a state in the Pacific Region of the United States. With 39.5 million residents across a total area of about 163,696 square miles (423,970 km2), {{selected_region}} is the most populous U.S. state and the third-largest by area, and is also the world's thirty-fourth most populous subnational entity, and is the most populated subnational entity in North America.
+    </div>
+    <button (click) = "navigateTo('/info')" class="more_info">More Info</button>
   </div>
-  <button (click) = "navigateToInfo()" class="more_info">More Info</button>
+
+  <div class="section-2 dashboard-content">
+    <p>Run Stats for: {{selected_region}}</p>
+
+    <div class="info">
+      About the Run
+    </div>
+    <button (click) = "navigateTo('/reports')" class="more_info">Generate Stats</button>
+  </div>
   
 </div>
 

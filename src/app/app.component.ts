@@ -1,5 +1,7 @@
 import { Component} from '@angular/core';
 import { SlideInOutAnimation } from './animations';
+import {Router} from '@angular/router';
+
 
 
 @Component({
@@ -12,7 +14,10 @@ export class AppComponent {
 
 router: boolean = false;
 carousel: boolean = true;
+overlay: boolean = true;
 animationState = 'in';
+
+constructor(private routernav: Router) { }
 
   toggleShowDiv(divName: string) {
     if (divName === 'divA') {
@@ -20,6 +25,8 @@ animationState = 'in';
       this.animationState = this.animationState === 'out' ? 'in' : 'out';
       console.log(this.animationState);
       this.router = true;
+      this.overlay = false;
+      this.routernav.navigateByUrl('/dashboard');
     }
   }
 

@@ -1,0 +1,29 @@
+<div class="row">
+	<div class="col-sm-5 content content2" id="content">
+		Stats of {{selected_region}}
+
+	</div>
+	<div class="col-sm-7 content content2" id="content">
+		<div class="row content content3">
+			Stats of {{selected_region}}
+		</div>
+		<div class="row content content3">
+			Stats of {{selected_region}}
+		</div>
+
+
+	</div>
+</div>
+<div class="row">
+	<div class="col-sm-7 content" id="content">
+		Stats of {{selected_region}}
+
+	</div>
+	<div class="col-sm-5 content" id="content">
+		<div  class="run-results">
+			<p (click) = "select_region($event.target.innerText)" class="menu-list" *ngFor="let region of run_regions">{{region}}</p>
+
+		</div>
+
+	</div>
+</div>

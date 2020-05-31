@@ -1,8 +1,96 @@
 .w-100{
 	height: 100vh;
+	background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: local;
+    background-size: cover;
 }
+
+.content{
+	top: 10%;
+}
+
+.slides{
+	font-size: 3rem;
+}
+
+.acro{
+	color: green;
+	border: 3px solid green;
+	padding: 0px 10px;
+	font-weight: bold;
+}
+
 
 .try-app{
 	text-align: center;
 	cursor: pointer;
+	letter-spacing: 5px;
+	background-color: green;
+    border: 1px solid green;
+    color: white;
+    border-radius: 5px;
+    padding: 5px 10px;
 }
+.try-app:hover{
+	text-align: center;
+	cursor: pointer;
+	letter-spacing: 5px;
+	background-color: white;
+    border: 1px solid green;
+    color: green;
+}
+.overlay{
+	position: absolute;
+    top: 0;
+    z-index: 9;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(29,29,29,.85)
+}
+
+.line-1{
+    position: relative;
+    top: 10%;  
+    width: 24em;
+    margin: 0 auto;
+    border-right: 2px solid rgba(255,255,255,.75);
+    font-size: 180%;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    transform: translateY(-50%);
+    padding: 1rem;
+}
+
+/* Animation */
+.anim-typewriter{
+  animation: typewriter 4s steps(44) 1s 1 normal both,
+             blinkTextCursor 500ms steps(44) infinite normal;
+}
+@keyframes typewriter{
+  from{width: 0;}
+  to{width: 32em;}
+}
+@keyframes blinkTextCursor{
+  from{border-right-color: rgba(255,255,255,.75);}
+  to{border-right-color: transparent;}
+}
+
+
+.logo-img{
+	position: absolute;
+	z-index: 10;
+	color: white;
+    font-size: 3rem;
+    margin: 2rem 3rem;
+    font-weight: bold;
+}
+
+@media (max-width:400px)  {
+		.w-100{
+	height: 60vh;
+	}
+
+
+	}
