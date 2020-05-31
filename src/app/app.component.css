@@ -25,7 +25,6 @@
 .try-app{
 	text-align: center;
 	cursor: pointer;
-<<<<<<< HEAD
 	letter-spacing: 5px;
 	background-color: green;
     border: 1px solid green;
@@ -86,8 +85,6 @@
     font-size: 3rem;
     margin: 2rem 3rem;
     font-weight: bold;
-=======
->>>>>>> f60ec5101763668fa08fc324d6ea9ad62f5f9376
 }
 
 @media (max-width:400px)  {
