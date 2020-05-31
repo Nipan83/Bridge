@@ -20,4 +20,16 @@ According to [USDA](https://www.ers.usda.gov), 11.1% of households were food ins
 
 And if this continues, by 2050 when the demand will be 60% higher than today, not to mention the scenario will get worse.
 
-## What are we proposing to tackle this problem? 
+## What are we proposing to tackle this problem?
+
+Barely-available Resources' Inter-region Distribution GuidE (BRIDGE) is a smart web application which leverages the power of machine learning to identify potential hotspots around the world where there is a rise in demand for resources(food/medical/human) but are not met. Simillarly hotspots are identified where excess production is made without a potential consumer. Our brief project motto is to bridge this divide and aid the government in empowering every single individual to achieve more.
+
+**BRIDGE follows the following steps to mitigate the issue-**
+
+- NASA Satellite Images are processed using Image Processing tools to determine county-wise cropland data and crops production. 
+- Two indexes are then calculated for every resource for a particular region, DemandIndexForResourceA and SupplyIndexForResourceA where an internal algorithm that takes in a ton of parameters like
+`Agricultural harvest of the region, GDP of the region, Population to Harvest ratio, Resource Cost at the region etc....` 
+- After training the model, we prepare one recommendation engine which gives us the Top 5 potential supplier for a buyer region.
+- These data and statistics are then showed in an Angular based Dashboard. 
+
+<img src="https://github.com/Nipan83/Bridge/blob/master/resources/Bridge%20Diagram.jpeg" alt="Flow Chart" width="1000" height="600">
